@@ -1,0 +1,22 @@
+<#
+Function to replace last occurrence of a sub string in a given string string 
+
+Example:
+
+Replace-LastSubstring -string "Full String" -subString "SubString to replace" -newstring "New SubString"
+
+-string "Full String" 
+-subString "SubString to replace" 
+-newstring "New SubString"
+#>
+
+function Replace-LastSubstring {
+    param(
+        [string]$string,
+        [string]$subString,
+        [string]$newstring
+    )
+
+    return $str.Remove(($lastIndex = $str.LastIndexOf($substr)),$substr.Length).Insert($lastIndex,$newstr)
+}
+
